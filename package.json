@@ -7,7 +7,9 @@
     "fufu": "bin/start.sh"
   },
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "lint": "eslint --ext .js .",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +20,8 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^23.6.0"
   },
   "dependencies": {
     "commander": "^2.18.0",
