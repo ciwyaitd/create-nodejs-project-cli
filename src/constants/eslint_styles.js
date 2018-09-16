@@ -1,0 +1,3 @@
+module.exports = {
+  standard: 'Standard'
+}
