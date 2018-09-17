@@ -11,7 +11,7 @@ function addDependencies (key, value) {
 
   json.dependencies[key] = value
 
-  cmd(() => shelljs.exec(`echo '${JSON.stringify(json, null, 2)}' > package.json`).code !== 0)
+  cmd(() => shelljs.exec(`echo '${JSON.stringify(json, null, 2)}' > package.json`))
 }
 
 module.exports = addDependencies
