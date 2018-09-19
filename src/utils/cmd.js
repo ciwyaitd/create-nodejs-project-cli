@@ -1,3 +1,5 @@
+'use strict'
+
 function cmd (fn) {
   const result = fn()
   if (result.code !== 0) {

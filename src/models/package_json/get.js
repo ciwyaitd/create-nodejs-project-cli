@@ -1,6 +1,10 @@
+'use strict'
+
+const path = require('path')
+
 function get () {
-  const path = `${process.cwd()}/package.json`
-  const json = require(path)
+  const src = path.resolve(process.cwd(), 'package.json')
+  const json = require(src)
   return json
 }
 
