@@ -12,7 +12,7 @@ async function create (name) {
   cmd(() => shelljs.exec('touch app.js'))
 
   // package json
-  await packageJson.cpFile()
+  packageJson.copyFile()
   packageJson.set('name', name)
 
   // eslint
@@ -30,7 +30,7 @@ async function create (name) {
       eslint.stylePromptList
     ])
 
-    await eslint.cpConfig(eslintStyle.value)
+    eslint.copyConfig(eslintStyle.value)
     eslint.addDependencies(eslintStyle.value)
   }
 
