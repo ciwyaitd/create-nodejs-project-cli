@@ -4,6 +4,7 @@ const cmd = require('../../utils/cmd')
 const eslint = require('../../models/eslint')
 const packageJson = require('../../models/package_json')
 const npm = require('../../models/npm')
+const config = require('../../models/config')
 
 async function create (name) {
   cmd(() => shelljs.mkdir(name))
@@ -14,6 +15,10 @@ async function create (name) {
   // package json
   packageJson.copyFile()
   packageJson.set('name', name)
+
+  // config
+  config.addDependencies()
+  config.copyFiles()
 
   // eslint
   const useEslint = await inquirer.prompt([

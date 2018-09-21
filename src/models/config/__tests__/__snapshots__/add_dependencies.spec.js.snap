@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`models/config/add_dependencies should math the snapshot 1`] = `
+Object {
+  "dependencies": Object {
+    "config": "^2.0.1",
+  },
+}
+`;
