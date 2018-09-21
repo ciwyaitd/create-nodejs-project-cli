@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`models/koa/add_dependencies should math the snapshot 1`] = `
+Object {
+  "dependencies": Object {
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+  },
+}
+`;

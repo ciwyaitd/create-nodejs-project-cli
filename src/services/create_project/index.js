@@ -5,12 +5,11 @@ const eslint = require('../../models/eslint')
 const packageJson = require('../../models/package_json')
 const npm = require('../../models/npm')
 const config = require('../../models/config')
+const koa = require('../../models/koa')
 
 async function create (name) {
   cmd(() => shelljs.mkdir(name))
   cmd(() => shelljs.cd(name))
-
-  cmd(() => shelljs.exec('touch app.js'))
 
   // package json
   packageJson.copyFile()
@@ -37,6 +36,21 @@ async function create (name) {
 
     eslint.copyConfig(eslintStyle.value)
     eslint.addDependencies(eslintStyle.value)
+  }
+
+  // koa
+  const useKoa = await inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'value',
+      message: 'Would you like to use koa?',
+      default: true
+    }
+  ])
+
+  if (useKoa.value) {
+    koa.addDependencies()
+    koa.copyFiles()
   }
 
   // install npm
