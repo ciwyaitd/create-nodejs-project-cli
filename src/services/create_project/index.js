@@ -7,6 +7,7 @@ const packageJson = require('../../models/package_json')
 const npm = require('../../models/npm')
 const config = require('../../models/config')
 const koa = require('../koa')
+const jest = require('../jest')
 
 async function create (name) {
   cmd(() => shelljs.mkdir(name))
@@ -25,6 +26,9 @@ async function create (name) {
 
   // koa
   await koa.prompt()
+
+  // jest
+  await jest.prompt()
 
   // install npm
   const result = await npm.install()

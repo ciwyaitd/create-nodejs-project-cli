@@ -8,5 +8,6 @@ module.exports = {
   'koa': '^2.5.2',
   'koa-bodyparser': '^4.2.1',
   'koa-router': '^7.4.0',
-  'config': '^2.0.1'
+  'config': '^2.0.1',
+  'jest': '^23.6.0'
 }
